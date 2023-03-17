@@ -1,0 +1,53 @@
+<h1 align="center">Liste des équipes</h1>
+
+<h3>Data du Mongo DB</h3>
+
+<table border="1" align="center" class="table">
+    <tr><th>ID</th><th>Name</th><th>Counrty</th><th>Supprimer</th></tr>
+    <tr *ngFor="let team of teams">
+     <td>{{team.id}}</td>
+     <td>{{team.name}}</td>
+     <td> {{team.country | uppercase }}</td>
+     <td><a class="btn btn-danger" (click)="deleteEquipe(team)">Supprimer</a></td>
+    </tr>
+</table>
+
+
+<hr/>
+
+Centre de formation : {{titre}}
+<br/>
+
+<button class="btn btn-primary" (click)="increment()">Cliquer pour augmenter le nombre</button>
+Nombre d'équipes : {{nbr}}
+
+
+<div id="zone" [hidden]="res">Lists des équipes</div>
+<br/>
+<button class="btn btn-primary" (click)="display()">Show or Hide</button>
+
+<hr/>
+
+<ul>
+    <li *ngFor="let equipe of equipes">{{equipe}}</li>
+</ul>
+
+<hr/>
+
+<ul>
+    <li *ngFor="let equipeDetails of equipesFull">{{equipeDetails.id}}--{{equipeDetails.nom}}--{{equipeDetails.pays | uppercase }}</li>
+</ul>
+
+<hr/>
+
+<table border="1" align="center" class="table">
+    <tr><th>ID</th><th>Numéro</th><th>Nom</th><th>Poste</th></tr>
+    <tr *ngFor="let joueur of joueurs">
+     <td>{{joueur.id}}</td>
+     <td>{{joueur.numero}}</td>
+     <td>{{joueur.nom|uppercase}}</td>
+     <td>{{joueur.poste}}</td>
+    </tr>
+</table>
+
+<hr/>
